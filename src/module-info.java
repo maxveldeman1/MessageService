@@ -1,0 +1,2 @@
+module be.vdab.messageService {
+}
