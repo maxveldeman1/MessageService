@@ -14,13 +14,11 @@ public class MessageRepository {
 
     public void write(Message message) {
         try (
-                FileOutputStream fileOutputStream = new FileOutputStream(path);
-//                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+                FileOutputStream fileOutputStream = new FileOutputStream(path, true);
                 NoHeaderOutputStream noHeaderOutputStream = new NoHeaderOutputStream(fileOutputStream);
         )  {
 
             noHeaderOutputStream.writeObject(message);
-//            noHeaderOutputStream.flush();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,7 +44,6 @@ public class MessageRepository {
 
         try (
                 FileInputStream fileInputStream = new FileInputStream(path);
-//                BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
                 ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
         ) {
             Object message;

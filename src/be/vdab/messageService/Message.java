@@ -42,6 +42,7 @@ public class Message implements Serializable {
 
     @Override
     public String toString() {
+        count++;
         StringBuilder stringBuilder = new StringBuilder();
         addTabsIfEven(stringBuilder);
         stringBuilder.append(date).append("\n");

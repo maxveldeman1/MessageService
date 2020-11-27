@@ -21,9 +21,9 @@ public class NoHeaderOutputStream extends ObjectOutputStream {
 
     @Override
     protected void writeStreamHeader() throws IOException {
-//        if (fileInputStream.read() == -1) {
+        if (fileInputStream.read() == -1) {
             super.writeStreamHeader();
-//        }
+        }
     }
 
 

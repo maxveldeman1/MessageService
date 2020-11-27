@@ -29,7 +29,5 @@ public class Main {
         readThread.start();
         writeThread.start();
 
-//        MessageWriter writer = new MessageWriter();
-//        writer.write(new Message("How are you doing?"));
     }
 }
